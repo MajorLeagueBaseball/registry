@@ -66,6 +66,18 @@ post '/packages' do
   end
 end
 
+delete "/packages/:name" do
+    begin
+        package = Package[:name => params[:name]]
+        package.delete
+        redirect to('/packages')
+    rescue Sequel::ValidationFailed
+        400
+    rescue Sequel::DatabaseError
+        406
+    end
+end
+
 get '/packages/:name' do
   package  = Package[:name => params[:name]]
 
