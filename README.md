@@ -7,7 +7,7 @@ curl <PATH_TO_REGISTRY> -v -F 'name=jquery' -F 'url=git://github.com/jquery/jque
 ```
 ## Find package
 ```bash
-curl http://bower.heroku.com/packages/jquery
+curl <PATH_TO_REGISTRY>/packages/jquery
   {"name":"jquery","url":"git://github.com/jquery/jquery.git"}
 ```
 ## Unregister package
